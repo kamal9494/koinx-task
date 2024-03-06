@@ -7,7 +7,7 @@ import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
 function TradingViewWidget() {
   const { token } = useParams();
-  const { cyptoData, price } = useData();
+  const { cyptoData, price, isDataLoaded } = useData();
 
   if (!cyptoData || !price) {
     return (
@@ -23,16 +23,16 @@ function TradingViewWidget() {
         <div className="flex items-center justify-center gap-2">
           <img
             className="w-9 object-contain"
-            src={cyptoData.image.small}
+            src={cyptoData && cyptoData.image.small}
             alt="rank #1 crypto"
           />
-          <h1 className="text-xl font-bold">{cyptoData.name}</h1>
+          <h1 className="text-xl font-bold">{cyptoData && cyptoData.name}</h1>
           <p className="font-medium text-gray-500">
-            {cyptoData.symbol.toUpperCase()}
+            {cyptoData && cyptoData.symbol.toUpperCase()}
           </p>
         </div>
         <div className="bg-[#768396] rounded-md text-white px-2 py-1">
-          Rank #{cyptoData.market_cap_rank}
+          Rank #{cyptoData && cyptoData.market_cap_rank}
         </div>
       </div>
       <div className="mx-5 rounded-md my-2 max-w-full bg-white px-5 min-w-[300px]">
@@ -40,34 +40,34 @@ function TradingViewWidget() {
           <div className="flex items-center justify-center gap-2">
             <img
               className="w-9 object-contain"
-              src={cyptoData.image.small}
+              src={cyptoData && cyptoData.image.small}
               alt="rank #1 crypto"
             />
-            <h1 className="text-xl font-bold">{cyptoData.name}</h1>
+            <h1 className="text-xl font-bold">{cyptoData && cyptoData.name}</h1>
             <p className="font-medium text-gray-500">
-              {cyptoData.symbol.toUpperCase()}
+              {cyptoData && cyptoData.symbol.toUpperCase()}
             </p>
           </div>
           <div className="bg-[#768396] rounded-md text-white px-2 py-1">
-            Rank #{cyptoData.market_cap_rank}
+            Rank #{cyptoData && cyptoData.market_cap_rank}
           </div>
         </div>
         <div className="flex rounded-md bg-white flex-col gap-1 py-5">
           <div className="flex gap-3 md:gap-5 items-center">
             <span className="text-3xl font-bold">
-              ${price[token].usd.toLocaleString()}
+              ${price && price[token] && price[token].usd.toLocaleString()}
             </span>
             <div className="bg-[#ebf9f4] flex w-fit px-2 py-1 rounded-md">
               <MdOutlineArrowDropUp className="text-[#14b079]" size={25} />
               <span className="text-[#14b079] text-sm font-medium">
-                {price[token].usd_24h_change.toFixed(2)} %
+                {price && price[token] && price[token].usd_24h_change.toFixed(2)} %
               </span>
             </div>
             <span className="text-gray-400 text-sm font-semibold">(24H)</span>
           </div>
           <div>
             <span className="text-md font-medium">
-              ₹ {price[token].inr.toLocaleString()}
+              ₹ {price && price[token] && price[token].inr.toLocaleString()}
             </span>
           </div>
         </div>

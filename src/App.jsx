@@ -4,18 +4,20 @@ import CoinDeatils from "./CoinDetails";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import BreadCrumbs from "./components/BreadCrumbs";
-import {Routes, Route} from "react-router-dom";
-import { useData } from "./contexts/CoinData";
+import Home from "./components/Home";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const { isDataLoaded } = useData();
-
   return (
     <div className="bg-[#eff2f5]">
       <Navbar />
       <BreadCrumbs />
       <Routes>
-        <Route path="/:token" element={<CoinDeatils />}></Route>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/:token"
+          element={<CoinDeatils />}
+        />
       </Routes>
       <div className={`hidden lg:block w-full`}>
         <Footer />

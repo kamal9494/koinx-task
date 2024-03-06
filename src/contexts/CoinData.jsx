@@ -44,8 +44,10 @@ export const DataProvider = ({ children }) => {
       const res = await makeApiCall(url, method, params);
       setPrice(res.data);
     } catch (err) {
-      if(err.response.status === 404){
+      if (err.response.status === 404) {
         setError("Coin Not Fount");
+      }else if(err.response.status === 429){
+        setError("Too Many Request's... Try again after 60 secounds");
       }
       console.log(err);
     }
@@ -59,8 +61,10 @@ export const DataProvider = ({ children }) => {
       const res = await makeApiCall(url, method, null);
       setCyptoData(res.data);
     } catch (err) {
-      if(err.response.status === 404){
+      if (err.response.status === 404) {
         setError("Coin Not Fount");
+      }else if(err.response.status === 429){
+        setError("Too Many Request's... Try again after 60 secounds");
       }
       console.log(err);
     }
@@ -75,8 +79,10 @@ export const DataProvider = ({ children }) => {
       setTrendingCoins(res.data.coins);
       setTopThree(coins.splice(0, 3));
     } catch (err) {
-      if(err.response.status === 404){
+      if (err.response.status === 404) {
         setError("Coin Not Fount");
+      }else if(err.response.status === 429){
+        setError("Too Many Request's... Try again after 60 secounds");
       }
       console.log(err);
     }

@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const makeApiCall = async (url, method, params) => {
-  console.log(url, method, params);
   try {
     const response = await axios({
       headers: {

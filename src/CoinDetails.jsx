@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import BreadCrumbs from "./components/BreadCrumbs";
 import TradingViewWidget from "./components/TradingViewWidget";
 import Performance from "./components/Performance";
