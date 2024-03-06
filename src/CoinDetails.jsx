@@ -27,7 +27,7 @@ const CoinDetails = () => {
     return (
       <div className="h-screen flex items-center justify-center flex-col gap-4">
         <h2 className="text-2xl text-center">{error}</h2>
-        <span className="text-md">Re-check you coin name</span>
+        <span className="text-md">Re-check the coin name</span>
       </div>
     );
   }
