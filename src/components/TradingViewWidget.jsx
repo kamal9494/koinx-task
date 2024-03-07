@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, memo } from "react";
-import { MdOutlineArrowDropUp } from "react-icons/md";
+import { MdOutlineArrowDropUp, MdOutlineArrowDropDown } from "react-icons/md";
 import { useData } from "../contexts/CoinData";
 import Graph from "./constants/Graph";
 import { useParams } from "react-router-dom";
@@ -57,10 +57,23 @@ function TradingViewWidget() {
             <span className="text-3xl font-bold">
               ${price && price[token] && price[token].usd.toLocaleString()}
             </span>
-            <div className="bg-[#ebf9f4] flex w-fit px-2 py-1 rounded-md">
-              <MdOutlineArrowDropUp className="text-[#14b079]" size={25} />
-              <span className="text-[#14b079] text-sm font-medium">
-                {price && price[token] && price[token].usd_24h_change.toFixed(2)} %
+            <div
+              className={`${
+                price && price[token] && price[token].usd_24h_change > 0
+                  ? "bg-[#ebf9f4] text-[#2fb988]"
+                  : "bg-[#fdf0ee] text-[#e96975]"
+              } flex items-center w-fit px-2 py-1 rounded-md `}
+            >
+              {price && price[token] && price[token].usd_24h_change > 0 ? (
+                <MdOutlineArrowDropUp size={25} />
+              ) : (
+                <MdOutlineArrowDropDown size={25} />
+              )}
+              <span className="text-sm font-medium">
+                {price &&
+                  price[token] &&
+                  price[token].usd_24h_change.toFixed(2)}
+                %
               </span>
             </div>
             <span className="text-gray-400 text-sm font-semibold">(24H)</span>
