@@ -18,12 +18,14 @@ URL: https://task-koinx.vercel.app/bitcoin (ctrl + click)
   3. Coins `/coins/{id}`
 - Created a responsive design to ensure compatibility across various devices.
 - Implemented Optional Tasks:
-  - Users can dynamically change the token name in the URL to view data and charts for different tokens.
+  - Users can dynamically change the coin name in the URL to view data and charts for different coins.
   - Example URL: `https://task-koinx.vercel.app/[coinname]`
   - Replace `[coinname]` with the name of the coin you want to view like:
     1. `bitcoin` for Bitcoin
     2. `ethereum` for Ethereum
     3. `ripple` for Ripple
+- Implemented Error handling, for example if user enter `[coinname]` as something that is not crypto coin then a message will be displayed.
+- Implemented functional breadcrumb navigation.
 - Deployed in vercel.
 - Note : I used FREE API Service from CoinGecko which has a `Rate Limit of 30 calls PER minute`.
 
