@@ -19,7 +19,7 @@ function TradingViewWidget() {
 
   return (
     <>
-      <div className="mx-5 my-2 px-5 md:hidden flex items-center bg-[#eff2f5] md:bg-white py-5 gap-5">
+      <div className="mx-5 my-2 md:hidden flex items-center bg-[#eff2f5] md:bg-white py-5 gap-5">
         <div className="flex items-center justify-center gap-2">
           <img
             className="w-9 object-contain"
