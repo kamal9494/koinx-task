@@ -4,7 +4,6 @@ import KeyImage1 from "../assets/key1.png";
 import KeyImage2 from "../assets/key2.png";
 import KeyEvent from "./constants/KeyEvent";
 import Slider from "./constants/Slider";
-import Fundamentals from "./constants/Fundamentals";
 
 const Sentiment = () => {
   const events = [
@@ -98,10 +97,6 @@ const Sentiment = () => {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="lg:hidden">
-        <Fundamentals />
       </div>
     </div>
   );
