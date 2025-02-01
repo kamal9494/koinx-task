@@ -8,7 +8,7 @@
 ## Demo URL
 URL Format : `https://task-koinx.vercel.app/[coinname]`
 
-URL: https://task-koinx.vercel.app/bitcoin (ctrl + click)
+URL: https://task-koinx.vercel.app/bitcoin
 
 ## Overview and Features
 - Implemented all components as shown in the Figma design.
