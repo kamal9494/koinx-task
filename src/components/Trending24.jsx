@@ -7,7 +7,7 @@ import { useData } from "../contexts/CoinData";
 const Trending24 = () => {
   const { topThree } = useData();
   return (
-    <div className="flex flex-col gap-5 w-full lg:sticky lg:top-[10px] my-2 min-w-[300px] max-w-full lg:max-w-full">
+    <div className="flex flex-col gap-5 w-full lg:sticky lg:top-[10px] my-2 min-w-[300px] max-w-full mb-[12px] lg:max-w-full">
       <div className="bg-[#0052fe] p-5 mx-5 lg:mx-0 rounded-xl flex flex-col items-center">
         <div className="flex md:flex-col items-center flex-col-reverse">
           <div>
